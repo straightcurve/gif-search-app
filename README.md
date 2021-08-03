@@ -1,8 +1,9 @@
-# ultralight-quick-start
+# Tenor GIF search app
 
-__Clone this repo to try a simple Ultralight app!__
-
-This is a minimal Ultralight app you can use with the [Writing Your First App](https://docs.ultralig.ht/docs/writing-your-first-app) article in the Ultralight documentation.
+This is a minimal Ultralight app that uses Tenor's api to search for gifs. You need your own api key.
+I decided not to continue further development because the built-in browser doesn't support all ES6 features, it's pretty outdated
+and the performance is.. a bit bad compared to any modern browser. This and the fact that I had to fix the build pipeline myself
+kind of makes me not want to use Ultralight anymore.
 
 ## 1. Install the Prerequisites
 
@@ -13,8 +14,8 @@ Before you build and run, you'll need to [install the prerequisites](https://doc
 To clone the repo and build, run the following:
 
 ```shell
-git clone https://github.com/ultralight-ux/ultralight-quick-start
-cd ultralight-quick-start
+git clone git@github.com:straightcurve/gif-search-app.git
+cd gif-search-app
 mkdir build
 cd build
 cmake ..
@@ -27,12 +28,8 @@ cmake --build . --config Release
 
 ### On macOS and Linux
 
-Navigate to `ultralight-quick-start/build` and run `MyApp` to launch the program.
+Navigate to `gif-search-app/build` and run `MyApp` to launch the program.
 
 ### On Windows
 
-Navigate to `ultralight-quick-start/build/Release` and run `MyApp` to launch the program.
-
-## Further Reading
-
-Follow the [Writing Your First App](https://docs.ultralig.ht/docs/writing-your-first-app) guide and other tutorials in the documentation for more info.
+Navigate to `gif-search-app/build/Release` and run `MyApp` to launch the program.
