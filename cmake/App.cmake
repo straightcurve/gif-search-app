@@ -2,9 +2,10 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 
-set(SDK_ROOT "${CMAKE_BINARY_DIR}/SDK/")
+set(SDK_ROOT "${CMAKE_BINARY_DIR}/SDK")
 set(ULTRALIGHT_INCLUDE_DIR "${SDK_ROOT}/include")
 set(ULTRALIGHT_BINARY_DIR "${SDK_ROOT}/bin")
+set(ULTRALIGHT_RESOURCES_DIR "${SDK_ROOT}/resources")
 set(ULTRALIGHT_INSPECTOR_DIR "${SDK_ROOT}/inspector")
 
 if (UNIX)
@@ -96,12 +97,12 @@ MACRO(ADD_APP source_list)
   if (APPLE)
     set(RESOURCES_PATH "$<TARGET_FILE_DIR:${APP_NAME}>/../Resources/resources") 
   else ()
-    set(RESOURCES_PATH "$<TARGET_FILE_DIR:${APP_NAME}>/resources") 
+    set(RESOURCES_PATH "$<TARGET_FILE_DIR:${APP_NAME}>/assets/resources") 
   endif () 
 
   # Copy resources to resources path
   add_custom_command(TARGET ${APP_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "${ULTRALIGHT_BINARY_DIR}/resources/" "${RESOURCES_PATH}")
+      COMMAND ${CMAKE_COMMAND} -E copy_directory "${ULTRALIGHT_RESOURCES_DIR}" "${RESOURCES_PATH}")
 
   add_dependencies(${APP_NAME} UltralightSDK)
 ENDMACRO()
