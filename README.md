@@ -1,4 +1,4 @@
-# Tenor GIF search app
+# Tenor GIF search app (dead)
 
 This is a minimal Ultralight app that uses Tenor's api to search for gifs. You need your own api key.
 I decided not to continue further development because the built-in browser doesn't support all ES6 features, it's pretty outdated
